@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<!-- saved from url=(0034)http://127.0.0.1:3000/do%20it.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript" src="./Letterboxd Clone 1_files/___vscode_livepreview_injected_script"></script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letterboxd Clone</title>
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="./Letterboxd Clone 1_files/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="icon" href="https://a.ltrbxd.com/logos/letterboxd-mac-icon.png">
+    <link rel="stylesheet" href="./Letterboxd Clone 1_files/all(1).min.css">
+
+
+
+    <style>
+        p {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        
+        .search-bar {
+            display: flex;
+            justify-content: center;
+            position: relative;
+      
+        }
+        
+        input {
+           position: relative;
+            padding: 10px;
+            width: 60%;
+            font-size: 16px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+        }
+        .search-bar .search-icon{
+            top: 50%;
+            right: 15px;
+
+            transform: translateY(-50%);
+            font-size: 17px;
+            pointer-events: none;
+
+        }
+        
+        
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #121212;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        header {
+            padding: 1rem;
+            background-color: #1e1e1e;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: red;
+        }
+        
+        .container {
+   
+ 
+
+            flex: 1;
+            margin: auto;
+          max-width: 1024px;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            justify-content: center;
+        }
+        
+        .section {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .cards {
+            column-count: 5;
+            gap: 2em;
+        }
+        
+        @media (max-width: 1024px) {
+            .cards {
+                column-count: 4;
+            }
+        }
+        
+        @media (max-width: 1200px) {
+            .cards {
+                column-count: 3;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .cards {
+                column-count: 2;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .cards {
+                column-count: 1;
+            }
+        }
+        
+        .card {
+           
+            break-inside: avoid;
+            margin-bottom: 1rem;
+            background: #1e1e1e;
+            border-radius: 4px;
+            transition: transform 0.3s;
+        }
+        
+        .card:hover {
+            transform: scale(1.03);
+        }
+        
+        .card img {
+            
+            cursor: pointer;
+            width: 100%;
+            object-fit: cover;
+            display: block;
+            border-radius: 4px 4px 0 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
+        }
+        .car img:hover{
+            padding:21px 32px;
+            background-color: green;
+        }
+        
+        .card h3 {
+            padding: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .card p {
+            padding: 0 0.5rem 0.5rem;
+            font-size: 0.9rem;
+            color: #bbb;
+            position: relative;
+        }
+        
+        footer {
+            background-color: #141212;
+            color: #ccc;
+            text-align: center;
+            padding: 20px 10em;
+            margin-top: 50px;
+            font-size: 1.2em;
+           
+        }
+        
+        .details {
+            display: flex;
+            justify-content: center;
+            padding: 2em;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fff;
+            color: #121212;
+            font-size: 1.5em;
+        }
+        
+        
+        h2 {
+            text-align: center;
+            width: fit-content;
+            background: linear-gradient(9deg, #c01515, #2606c7);
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+            color: #f7f5f5;
+        }
+        
+        .color {
+            background: linear-gradient(to right, #ea640b, #ea0eb3);
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+        }
+        
+        .box {
+           
+           font-size: 20px;
+           display: block;
+           text-align: justify;
+           color: white;
+           font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+        }
+        
+        span {
+            color: rgb(255, 254, 252);
+        }
+        .wwe{
+            color: #fffafa;
+            overflow: hidden;
+            background-color: rgb(4, 132, 237);
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            
+        }
+        
+    </style>
+</head>
+
+<body>
+    
+    <header>Letterboxd <span>
+        •
+    </span> Social film discovery
+
+        <div class="img-1">
+            <a target="_blank" href="https://www.letterboxd.com/"><img width="100" src="./Letterboxd Clone 1_files/Letterboxd_2023_logo.png" alt="">
+            </a>
+
+            <p class="box">
+                Social Network platform for films enthusiasts to track review,and rate movies. It's allows users to log their Movie-Watching create list, share reviews and "Goodread for movies".
+                Anyone can read content on the site. However, users who want to participate must create a Letterboxd account.
+
+                All members can rate films on a scale of one to five stars (with half-stars also allowed), review films, and tag them with relevant keywords.  <span class="wwe">
+
+                    Members may also list their four favorite films, maintain lists of films they have watched or want to watch, and interact with other members. A follower model enables members to follow and get updates about the activity of others on the site. Lists could originally only be made public or private to the user. In April 2023, finer controls were added which allowed sharing a list with specific users via a secret link.
+                
+                In December 2023, Letterboxd partnered with the aggregator Assemble to launch a feature identifying showtimes and links to ticketing websites for movies that were currently in theaters. The feature applies to movie theaters in the United States, Canada, the United Kingdom, Ireland, New Zealand, and Australia.
+           
+                </span> 
+           
+            </p>
+        </div>
+    </header>
+
+
+
+    <div class="container">
+
+        <div class="search-bar">
+            <input class="search-bar-input" type="text" placeholder="Search for movies..." name="" id=""> 
+          
+        </div>
+
+        <style>
+            .icons {
+                display: flex;
+                gap: 10px;
+                justify-content: center;
+                margin: 12px;
+               
+            }
+            
+            .icons i {
+                transition: ease-in 0.2s all;
+            }
+            
+            .icons i:hover {
+                transform: scale(1.1);
+            }
+            
+            .fa-facebook {
+                padding: 10px 12px;
+                
+                border: none;
+                border-radius: 100%;
+                background: linear-gradient(90deg, red, blue);
+            }
+            
+            .fa-twitter {
+                padding: 10px 12px;
+                border: none;
+                border-radius: 100%;
+                background: linear-gradient(90deg, red, blue);
+            }
+            
+            .fa-youtube {
+                padding: 10px 12px;
+                border: none;
+                border-radius: 100%;
+                background: linear-gradient(90deg, red, blue);
+            }
+            
+            .fa-instagram {
+                padding: 10px 12px;
+                border: none;
+                border-radius: 100%;
+                background: linear-gradient(90deg, red, blue);
+            }
+            
+            a {
+                color: rgb(240, 233, 233);
+                text-decoration: none;
+                font-size: 1em;
+                font-weight: 600;
+            }
+            .fa-threads{
+                padding: 10px 12px;
+                border: none;
+                border-radius: 100%;
+                background: linear-gradient(90deg, red, blue);
+            }
+           
+           
+        </style>
+       
+        <div class="section">
+           
+            <div class="cards">
+                <div class="card">
+                 <a target="_blank" href="https://letterboxd.com/film/sinners-2025/">  <img src="./Letterboxd Clone 1_files/1116600-sinners-2025-0-1000-0-1500-crop.jpg" alt="Nice Guys">
+                 </a>
+                    
+                   
+                   <h3>SINNERS 2025</h3>
+                    <a target="_blank" href="https://www.imdb.com/name/nm3363032/?ref_=nv_sr_srsg_0_tt_2_nm_6_in_0_q_ryan%2520coogler">
+                        <p>Film by Ryan Coogler</p>
+                    </a>
+                </div>
+                <div class="card">
+
+
+                   <a target="_blank" href="http://127.0.0.1:3000/do%20it.html">   <img src="./Letterboxd Clone 1_files/502622-final-destination-bloodlines-0-1000-0-1500-crop.jpg" alt="Grand Illusion">
+                   </a>
+                    <h3>Final Destination: Bloodlines 2025</h3>
+                    <a target="_blank" href="https://www.imdb.com/name/nm0513554/">
+                        <p>Film by Zach Lipovsky, Adam Stein</p>
+                    </a>
+                </div>
+
+                <div class="card">
+                    <a target="_blank" href="http://127.0.0.1:3000/do%20it.html">  <img src="./Letterboxd Clone 1_files/486978-gladiator-ii-0-1000-0-1500-crop.jpg" alt="Grand Illusion">
+                   
+
+                    </a>
+                        <h3>Gladiator 2  2024</h3>
+                    <a target="_blank" href="https://www.imdb.com/name/nm0000631/?ref_=nv_sr_srsg_0_tt_7_nm_1_in_0_q_ridly%2520scott%2520">
+                        <p>Film by Ridly Scott</p>
+                    </a>
+                </div>
+                <div class="card">
+                    <a target="_blank" href="http://127.0.0.1:3000/do%20it.html">   <img src="./Letterboxd Clone 1_files/qsYQflQhOuhDpQ0W2aOcwqgDAeI-0-1000-0-1500-crop.jpg" alt="Grand Illusion">
+                  
+                    </a>
+                  
+                        <h3>PROMETHEOUS 2012</h3>
+                    <a target="_blank" href="https://www.imdb.com/name/nm0000631/?ref_=nv_sr_srsg_0_tt_7_nm_1_in_0_q_ridly%2520scott%2520">
+                        <p>Film by Ridly Scott</p>
+                    </a>
+                </div>
+
+
+
+                <div class="card">
+                    <a target="_blank" href="http://127.0.0.1:3000/do%20it.html"> 
+                        
+                        
+                        
+                        <img src="./Letterboxd Clone 1_files/51963-indiana-jones-and-the-temple-of-doom-0-1000-0-1500-crop.jpg" alt="Grand Illusion">
+                    
+                    </a>
+                        <h3>Indiana Jones and the Temple of Doom 1963</h3>
+                    <a target="_blank" href="https://www.imdb.com/name/nm0000229/">
+                        <p>Film by Steven Spielberg</p>
+                    </a>
+                </div>
+                <div class="card">
+                    <a target="_blank" href="http://127.0.0.1:3000/do%20it.html">  
+                        <img src="./Letterboxd Clone 1_files/1255394-the-odyssey-2026-0-1000-0-1500-crop.jpg" alt="">
+                    
+                    </a>
+                        <h3>
+                        THE ODYSSEY 2026
+                    </h3>
+                  <a target="_blank" href="https://www.imdb.com/name/nm0634240/?ref_=nv_sr_srsg_3_tt_0_nm_8_in_0_q_christopher%2520">
+                    <p>
+                        Film by Christopher Nolan
+                    </p>
+                  </a>
+                </div>
+                <div class="card">
+                    <a target="_blank" href="http://127.0.0.1:3000/do%20it.html"> 
+                        
+                        <img src="./Letterboxd Clone 1_files/cDbNAY0KM84cxXhmj8f0dLWza3t-0-1000-0-1500-crop.jpg" alt="Grand Illusion">
+                    </a>
+                    
+                        <h3>DUNE part ONE 2021</h3>
+                    <a target="_blank" href="https://www.imdb.com/name/nm0898288/?ref_=nv_sr_srsg_3_tt_1_nm_7_in_0_q_denis">
+                        <p>Film by Denis Villeneuve</p>
+                    </a>
+                </div>
+                <div class="card">
+                    
+                    
+                    <a target="_blank" href="http://127.0.0.1:3000/do%20it.html"> 
+                          <img src="./Letterboxd Clone 1_files/265439-blade-runner-2049-0-1000-0-1500-crop.jpg" alt="">
+                
+                    </a>
+
+
+                <h3>
+                    BLADE RUNNER 2049: 2021
+                </h3>
+            
+                <a href="./Letterboxd Clone 1_files/265439-blade-runner-2049-0-1000-0-1500-crop.jpg">
+
+                    <p>
+                        Film by Denis
+                        Villeneuve
+                    </p>
+                </a>
+
+                </div>
+                <div class="card">
+                    <a target="_blank" href="http://127.0.0.1:3000/do%20it.html"> 
+                        
+                        <img src="./Letterboxd Clone 1_files/Mission_Impossible_–_The_Final_Reckoning_Poster.jpg" alt="MI Final Reckoning">
+                    </a>
+                    
+                        <h3>Mission Impossible: Final Dead Reckoning 2025</h3>
+                    <a target="_blank" href="https://www.imdb.com/name/nm0003160/">
+                        <p>Film by Christopher McQuarrie</p>
+                    </a>
+                </div>
+                <div class="card">
+                    <a target="_blank" href="http://127.0.0.1:3000/do%20it.html"> 
+                        
+                        <img src="./Letterboxd Clone 1_files/22287.jpg" alt="Thunderbolts">
+                    
+                    </a>
+                        <h3>THUNDERBOLTS 2025</h3>
+                    <a target="_blank" href="https://www.imdb.com/name/nm1500577/">
+                        <p> Film by  Jake Schrier</p>
+                    </a>
+                </div>
+                <div class="card">
+                    <a target="_blank" href="http://127.0.0.1:3000/do%20it.html"> 
+                        
+                        <img src="./Letterboxd Clone 1_files/Oppenheimer_(film).jpg" alt="Thunderbolts"> 
+                    
+                    </a>
+                        <h3>OPPENHEIMER 2023</h3>
+                    <a target="_blank" href="https://www.imdb.com/name/nm0634240/?ref_=nv_sr_srsg_0_tt_4_nm_4_in_0_q_christopher%2520nolan">
+                        <p>Film by Christopher nolan</p>
+
+                        </a><a target="_blank" href="http://127.0.0.1:3000/mtm.html">
+                        <p>
+                          
+                            see more!
+                            
+                        </p>
+                        </a>
+                    
+                </div>
+
+
+                <div class="card">
+                    <a target="_blank" href="http://127.0.0.1:3000/do%20it.html"> 
+                        
+                        <img src="./Letterboxd Clone 1_files/The_Weeknd_-_Hurry_Up_Tomorrow.png" alt="Hurry Up Tomorrow">
+                    
+                    </a>
+                        <h3>Hurry UP Tomorrow 2025</h3>
+                    <a target="_blank" href="https://www.imdb.com/name/nm4099092/">
+                        <p>Film by Edward Shults</p>
+                    </a>
+                </div>
+
+
+                <div class="card">
+                    <a target="_blank" href="http://127.0.0.1:3000/do%20it.html"> 
+                        
+                        <img src="./Letterboxd Clone 1_files/sGQv3ZMZBDBnl3z42Q0mEQ5uiDe-0-1000-0-1500-crop.jpg" alt="Hurry Up Tomorrow">
+                    
+                    </a>
+                        <h3>social NETWORK 2010 </h3>
+                    <a target="_blank" href="https://www.imdb.com/name/nm0000399/?ref_=nv_sr_srsg_0_tt_4_nm_4_in_0_q_David%2520Fincher">
+                        <p>
+                            David Fincher
+                        </p>
+                    </a>
+                    
+                </div>
+
+                <div class="card">
+                    <a target="_blank" href="http://127.0.0.1:3000/do%20it.html"> 
+                        
+                        <img src="./Letterboxd Clone 1_files/501929-bad-boys-ride-or-die-0-1000-0-1500-crop.jpg" alt="Hurry Up Tomorrow">
+                    
+                    </a>
+                        <h3>Bad Boys 2024  </h3>
+                    <a target="_blank" href="https://www.imdb.com/name/nm4816401/?ref_=fn_all_nme_1">
+                        <p>
+                           Adil El Arbi
+                        </p>
+                    </a>
+
+                    <a href="https://www.imdb.com/name/nm4263190/?ref_=fn_all_nme_1">
+
+                        <p>
+                            Bilall Fallah 
+                        </p>
+                    </a>
+                    
+                </div>
+
+
+                <div class="card">
+                    <a target="_blank" href="http://127.0.0.1:3000/do%20it.html"> 
+                          <img src="./Letterboxd Clone 1_files/149857-gone-girl-0-1000-0-1500-crop.jpg" alt="Hurry Up Tomorrow">
+                    
+                    
+                    </a>
+                          <h3>GONE GIRL 2014 </h3>
+                    <a target="_blank" href="https://www.imdb.com/name/nm0000399/?ref_=nv_sr_srsg_0_tt_4_nm_4_in_0_q_David%2520Fincher">
+                        <p>
+                            David Fincher
+                        </p>
+                        </a><a target="_blank" href="http://127.0.0.1:3000/David.html">
+                        <p>
+                            see more!
+                        </p>
+                    </a>
+                    
+                </div>
+                <div class="card">
+                    <a target="_blank" href="http://127.0.0.1:3000/do%20it.html"> 
+                           <img src="./Letterboxd Clone 1_files/470671-ballerina-2025-0-1000-0-1500-crop.jpg" alt="The Accountant">
+                    </a>
+                    
+                           <h3>From the world of JHON WICK 2025: BALLERINA </h3>
+                    <a target="_blank" href="https://www.imdb.com/name/nm0936482/">
+                        <p> Film by  Len Wiseman</p>
+                    </a>
+                </div>
+
+
+                
+                <div class="card">
+                    <a target="_blank" href="https://letterboxd.com/film/the-brutalist/"> 
+                        
+                        <img src="./Letterboxd Clone 1_files/TheBrutalist2024.png" alt="The Accountant">
+                    
+                    </a>
+                        <h3>THE BRUTALIST 2024 </h3>
+                    <a target="_blank" href="https://www.imdb.com/name/nm1227232/?ref_=nv_sr_srsg_0_tt_1_nm_5_in_0_q_brady%2520corebt%2520">
+                        <p>
+                        Film by    Brady Corpet
+                        </p>
+                    </a>
+                </div>
+                <div class="card">
+                    <a target="_blank" href="https://letterboxd.com/film/transformers-dark-of-the-moon/"> 
+                        
+                        <img src="./Letterboxd Clone 1_files/p2CcXx2AUllgwGis5jsffYQGE3F-0-1000-0-1500-crop.jpg" alt="The Accountant">
+                    
+                    </a>
+                        <h3>TRANSFORMERS DARK OF the MOON</h3>
+                    <a target="_blank" href="https://www.imdb.com/name/nm0000881/?ref_=fn_all_nme_1">
+                        <p>
+                        Film by    Michael Bay 
+                        </p>
+                    </a>
+                </div>
+                <div class="card">
+                    <a target="_blank" href="https://letterboxd.com/film/black-panther/"> 
+                          <img src="./Letterboxd Clone 1_files/209383-black-panther-0-1000-0-1500-crop.jpg" alt="The Accountant">
+                    
+                    </a>
+                          <h3>Black Panther  2018 </h3>
+                    <a target="_blank" href="https://www.imdb.com/name/nm3363032/?ref_=nv_sr_srsg_0_tt_2_nm_6_in_0_q_Ryan%2520coogler%2520">
+                        <p>
+                        Film by Ryan Coogler
+                        </p>
+                    </a>
+                </div>
+
+                <div class="card">
+                    <a target="_blank" href="https://letterboxd.com/film/karate-kid-legends/"> 
+                        
+                        
+                        <img src="./Letterboxd Clone 1_files/911333-karate-kid-legends-0-1000-0-1500-crop.jpg" alt="The Accountant">
+                    </a>
+                        <h3>Karate Kid Legends 2025 </h3>
+                    <a target="_blank" href="https://www.imdb.com/name/nm3536642/?ref_=nv_sr_srsg_0_tt_2_nm_6_in_0_q_Jonathan%2520wistle">
+                        <p>
+                        Film by  Jonathan Entwistle
+                        </p>
+                    </a>
+                </div>
+
+                <div class="card">
+                    <a target="_blank" href="https://letterboxd.com/film/the-dark-knight/"> 
+                        
+                        <img src="./Letterboxd Clone 1_files/oefdD26aey8GPdx7Rm45PNncJdU-0-1000-0-1500-crop.jpg" alt="The Accountant">
+                    
+                    </a>
+                        <h3>The Dark night 2008 </h3>
+                    <a target="_blank" href="https://www.imdb.com/name/nm1227232/?ref_=nv_sr_srsg_0_tt_1_nm_5_in_0_q_brady%2520corebt%2520">
+                        <p>
+                        Film by Christopher
+                        nolan
+                        </p>
+                    </a>
+                </div>
+                <div class="card">
+                    <a target="_blank" href="https://letterboxd.com/film/the-phoenician-scheme/"> 
+                          <img src="./Letterboxd Clone 1_files/1025047-the-phoenician-scheme-0-1000-0-1500-crop.jpg" alt="The Accountant">
+                    
+                    </a>
+                          <h3>THE PHEONICIAN scheme 2025 </h3>
+                    <a target="_blank" href="https://www.imdb.com/name/nm0027572/?ref_=fn_all_nme_1">
+                        
+                        <p>
+                      Film by       Wes Andreson
+                        </p>
+                    </a>
+                    <a target="_blank" href="http://127.0.0.1:3000/steve.html">
+                        <p>
+                            See more!
+                        </p>
+                    </a>
+                </div>
+
+                <div class="card">
+                    <a target="_blank" href="https://letterboxd.com/film/elio/"> 
+                           <img src="./Letterboxd Clone 1_files/921575-elio-0-1000-0-1500-crop.jpg" alt="The Accountant">
+                    
+                    </a>
+                           <h3> Elio 2025 </h3>
+                    <a target="_blank" href="https://www.imdb.com/name/nm7626019/?ref_=nv_sr_srsg_0_tt_5_nm_3_in_0_q_domee%2520shi%2520">
+                        <p>
+                      Film by Domee Shi
+                        </p>
+                    </a>
+                </div>
+
+                
+
+                <div class="card">
+                    <a target="_blank" href="https://letterboxd.com/film/the-accountant-2025/"> 
+                           <img src="./Letterboxd Clone 1_files/782006-the-accountant-2-0-1000-0-1500-crop.jpg" alt="The Accountant">
+                    
+                    </a>
+                           <h3>The Accountant 2: 2025</h3>
+                    <a target="_blank" href="https://www.imdb.com/name/nm0640334/">
+                        <p> Film by Gavin O'Conner </p>
+                    </a>
+                </div>
+
+                <div class="card">
+                    <a target="_blank" href="https://letterboxd.com/film/suicide-squad-2016/"> 
+                           <img src="./Letterboxd Clone 1_files/n3rm3gxguxzFDlygpROV7RHbELe-0-1000-0-1500-crop.jpg" alt="">
+                    
+                    </a>
+                           <h3> SUICIDE SQUAD 2016</h3>
+                    <a target="_blank" href="https://www.imdb.com/name/nm0043742/?ref_=nv_sr_srsg_0_tt_0_nm_8_in_0_q_David%2520ayer%2520">
+
+                        <p>
+                            Film by David Ayer
+                        </p>
+                    </a>
+
+                </div>
+
+                <div class="card">
+                    <a target="_blank" href="https://letterboxd.com/film/fear-street-prom-queen/"> 
+                           <img src="./Letterboxd Clone 1_files/902157-fear-street-prom-queen-0-1000-0-1500-crop.jpg" alt="">
+                    </a>
+                   <h3>
+
+                    Fear Street Prom Queen 2025
+                
+                   </h3>
+                    <a target="_blank" href="https://www.imdb.com/name/nm2160297/?ref_=fn_all_nme_1">
+                    <p>
+Matt Palmer 
+
+                    </p>
+                </a>
+                </div>
+                <div class="card">
+                    <a target="_blank" href="https://letterboxd.com/film/ne-zha-2/"> 
+                            <img src="./Letterboxd Clone 1_files/882745-ne-zha-2-0-1000-0-1500-crop.jpg" alt="Nezha 2">
+                    
+                    
+                    </a>
+                            <h3>Nezha 2 2025</h3>
+
+                    <a target="_blank" href="https://www.imdb.com/name/nm1169562/">
+                        <p> Film by  Yu Yung</p>
+                    </a>
+                </div>
+                <div class="card">
+                    <a target="_blank" href="https://letterboxd.com/film/a-minecraft-movie/"> 
+                           <img src="./Letterboxd Clone 1_files/854691-a-minecraft-movie-0-1000-0-1500-crop.jpg" alt="Minecraft">
+                    
+                    </a>
+                           <h3>Minecraft 2025</h3>
+                    <a target="_blank" href="http://127.0.0.1:3000/do%20it.html">
+                        <p>Film by Jared Hess</p>
+                    </a>
+                </div>
+                <div class="card">
+                    <a target="_blank" href="https://www.letterboxd.com/film/a-working-man/"> 
+                           <img src="./Letterboxd Clone 1_files/1082225-a-working-man-0-1000-0-1500-crop.jpg" alt="A Working Man">
+                    
+                    </a>
+                           <h3>A Working Man 2025</h3>
+                    <a target="_blank" href="https://www.imdb.com/name/nm0043742/?ref_=nv_sr_srsg_0_tt_0_nm_8_in_0_q_david%2520ayer">
+                        <p>Film by David Ayer</p>
+                    </a>
+                </div>
+                <div class="card">
+                   
+                           <img src="./Letterboxd Clone 1_files/22308.jpg" alt="A Working Man">
+                    
+               
+                           <h3>GTA 6 2026</h3>
+                    <a target="_blank" href="https://www.rockstargames.com/gta-6">
+                        <p>Rockstar Games Studios</p>
+                    </a>
+                </div>
+
+                <div class="card">
+                    <a target="_blank" href="https://letterboxd.com/film/f1-the-movie/"> 
+                           <img src="./Letterboxd Clone 1_files/f1-0-1000-0-1500-crop.jpg" alt="">
+                    
+                    </a>    
+                           <h3>F1</h3>
+                    <a target="_blank" href="https://www.imdb.com/name/nm2676052/">
+                        <p> Film by  Joseph Kosinski</p>
+                    </a>
+                </div>
+                <div class="card">
+                    <a target="_blank" href="https://www.letterboxd.com/film/dune-part-two-2024/"> 
+                            <img src="./Letterboxd Clone 1_files/Dune_Part_Two_poster.jpeg" alt="">
+                    
+                    </a>
+                            <h3>DUNE PART TWO 2024</h3>
+                    <a target="_blank" href="https://www.imdb.com/name/nm0898288/?ref_=nv_sr_srsg_3_tt_1_nm_7_in_0_q_denis">
+                        <p>
+                          Film by  Denis Villeneuve
+                        </p>
+                    </a>
+                </div>
+                <div class="card">
+                    <a target="_blank" href="https://www.letterboxd.com/film/wolf-man-2025/"> 
+                        
+                        <img src="./Letterboxd Clone 1_files/Wolf_Man_2025_poster.jpg" alt="">
+                   
+                    </a>
+                        <h3>Wolf Man 2025</h3>
+                    <a target="_blank" href="https://www.imdb.com/name/nm1191481/">
+                        <p> Film by Leigh Whannel</p>
+                    </a>
+                </div>
+
+
+
+                <div class="card">
+                    <a target="_blank" href="https://www.letterboxd.com/film/superman-2025/"> 
+                          <img src="./Letterboxd Clone 1_files/957050-superman-2025-0-1000-0-1500-crop.jpg" alt="">
+                    
+                    </a>
+                          <h3>SUPERMAN</h3>
+                    <a target="_blank" href="https://www.imdb.com/name/nm0348181/?ref_=nv_sr_srsg_0_tt_2_nm_6_in_0_q_james%2520gunn">
+                        <p> Film by James GUNN</p>
+                    </a>
+                </div>
+                <div class="card">
+                    <a target="_blank" href="https://www.letterboxd.com/film/lilo-stitch-2025/"> 
+                         <img src="./Letterboxd Clone 1_files/481233-lilo-stitch-2025-0-1000-0-1500-crop.jpg" alt="">
+                    
+                    </a>
+                         <h3>Lilo Stich</h3>
+                    <a target="_blank" href="https://www.imdb.com/name/nm3255797/">
+                        <p> Film by  Dean Fliescher Camp</p>
+                    </a>
+                </div>
+
+                <div class="card">
+                    <a target="_blank" href="https://letterboxd.com/film/fast-x/"> 
+                          <img src="./Letterboxd Clone 1_files/320481-fast-x-0-1000-0-1500-crop.jpg" alt="">
+                    
+                    </a>
+                    <h3>
+                        FAST X 2023 
+                    </h3>
+                    <a target="_blank" href="https://www.imdb.com/name/nm0504809/?ref_=nv_sr_srsg_0_tt_1_nm_7_in_0_q_louis%2520lett">
+                        <p>
+                            Film by Louis Lettieri
+                        </p>
+                    </a>
+                </div>
+                <div class="card">
+                    <a target="_blank" href="https://letterboxd.com/film/the-fantastic-four-first-steps/"> 
+                          <img src="./Letterboxd Clone 1_files/images" alt="">
+                    
+                    </a>
+                          <h3>Fanatstic Four: First steps</h3>
+                    <a target="_blank" href="https://www.imdb.com/name/nm0787687/?ref_=nv_sr_srsg_0_tt_1_nm_7_in_0_q_Matt%2520shakman">
+                        <p> Film by Matt Shakman</p>
+                    </a>
+                </div>
+
+
+                <div class="card">
+                    <a target="_blank" href="https://www.letterboxd.com/film/dog-man/"> 
+                          <img src="./Letterboxd Clone 1_files/693733-dog-man-0-1000-0-1500-crop.jpg" alt="">
+                   
+                    </a>
+                          <h3>
+                        Dog Man 2025
+                    </h3>
+                    <a target="_blank" href="https://www.imdb.com/name/nm0368614/?ref_=nv_sr_srsg_0_tt_1_nm_7_in_0_q_peter%2520hastings">
+                        <p> Film by Peter Hastings</p>
+                    </a>
+                </div>
+
+                <div class="card">
+                    <a target="_blank" href="https://www.letterboxd.com/film/the-batman/"> 
+                          <img src="./Letterboxd Clone 1_files/348914-the-batman-0-2000-0-3000-crop.jpg" alt="">
+                    
+                    </a>
+                          <h3>
+                        THE BATMAN
+                    </h3>
+                    <a target="_blank" href="https://www.imdb.com/name/nm0716257/?ref_=nv_sr_srsg_0_tt_2_nm_6_in_0_q_matt%2520revees">
+                        <p>Film by  Matt Reeves</p>
+                    </a>
+                </div>
+
+
+                <div class="card">
+                    <a target="_blank" href="https://www.letterboxd.com/film/asteroid-city/"> 
+                            <img src="./Letterboxd Clone 1_files/668555-asteroid-city-0-1000-0-1500-crop.jpg" alt="">
+                    
+                    </a>
+                            <h3>
+                       Asteroid city 2023
+                    </h3>
+                    <a target="_blank" href="https://www.imdb.com/name/nm0027572/?ref_=nv_sr_srsg_1_tt_4_nm_3_in_0_q_Wes%2520anderson%2520">
+                        <p>Film by Wes Anderson</p>
+                    </a>
+                </div>
+
+                <div class="card">
+                    <a target="_blank" href="https://www.letterboxd.com/film/top-gun-maverick/"> 
+                         <img src="./Letterboxd Clone 1_files/293465-top-gun-maverick-0-1000-0-1500-crop.jpg" alt="">
+                    
+                    </a>
+                         <h3>
+                       TOP GUN MAVERICK 2022
+                    </h3>
+                    <a target="_blank" href="https://www.imdb.com/name/nm2676052/?ref_=nv_sr_srsg_0_tt_1_nm_7_in_0_q_Joseph%2520ko">
+                        <p>Film by  Joseph Kosinski</p>
+                    </a>
+                </div>
+
+                <div class="card">
+                    <a target="_blank" href="https://www.letterboxd.com/film/creed-iii/"> 
+                         <img src="./Letterboxd Clone 1_files/601624-creed-iii-0-1000-0-1500-crop.jpg" alt="">
+                    
+                    </a>
+                         <h3>
+                       CREED III 2023
+                    </h3>
+                    <a target="_blank" href="https://www.imdb.com/name/nm3363032/?ref_=nv_sr_srsg_0_tt_2_nm_6_in_0_q_ryan%2520coogle">
+                        <p>Film by Royn Coogler</p>
+                    </a>
+                </div>
+
+                <div class="card">
+                    <a target="_blank" href="https://www.letterboxd.com/film/the-amateur-2025/"> 
+                         <img src="./Letterboxd Clone 1_files/980914-the-amateur-2025-0-1000-0-1500-crop.jpg" alt="">
+                    
+                    
+                    </a>
+                         <h3>
+                        THE AMATEUR 2025
+                    </h3>
+                    <a target="_blank" href="https://www.imdb.com/name/nm0369949/?ref_=fn_all_nme_1">
+                        <p>Film by James Hawes</p>
+                    </a>
+                </div>
+
+                <div class="card">
+                   
+                    <a target="_blank" href="https://www.letterboxd.com/film/everything-everywhere-all-at-once/"> 
+                         <img src="./Letterboxd Clone 1_files/474474-everything-everywhere-all-at-once-0-1000-0-1500-crop.jpg" alt="">
+                    
+                    </a>
+                         <h3>
+                       EVERYTHING EVERYWHERE ALL AT ONCE 2022
+                    </h3>
+                    
+                     <a target="_blank" href="https://www.imdb.com/name/nm3453283/?ref_=nv_sr_srsg_0_tt_0_nm_8_in_0_q_Daniel%2520kwan%2520"><p>
+
+                        Daniel Kwan
+                     </p></a>
+                     
+                     <a href="https://www.imdb.com/name/nm3215397/?ref_=nv_sr_srsg_2_tt_0_nm_8_in_0_q_Daniel%2520sch">
+
+                        <p>
+                            Daniel Scheinert
+                        </p>
+                     </a>
+                  
+                </div>
+
+               
+
+                <div class="card">
+                   
+                    <a target="_blank" href="https://letterboxd.com/film/the-wild-robot/"> 
+                          <img src="./Letterboxd Clone 1_files/1071196-the-wild-robot-0-1000-0-1500-crop.jpg" alt="">
+                    </a>
+                    <h3>
+                        WILD ROBOT  2024
+                    </h3>
+                    
+                     <a target="_blank" href="https://www.imdb.com/name/nm0761498/?ref_=nv_sr_srsg_0_tt_0_nm_8_in_0_q_chris"><p>
+
+                        Chris Sanders
+                     </p></a> 
+                  
+                </div>
+
+                <div class="card">
+                    <a target="_blank" href="https://letterboxd.com/film/the-twilight-saga-breaking-dawn-part-1/"> 
+                         <img src="./Letterboxd Clone 1_files/15077-the-twilight-saga-breaking-dawn-part-1-0-1000-0-1500-crop.jpg" alt="">
+                    
+                    </a>
+                         <h3>
+                     The TWILIGHT SAGA: Breaking Dawn pt.1
+                    </h3>
+                    
+                     <a target="_blank" href="https://www.imdb.com/name/nm0174374/?ref_=fn_all_nme_1"><p>
+
+                 Bill Condon
+                     </p></a> 
+                  
+                </div>
+
+                <div class="card">
+                    <a target="_blank" href="https://letterboxd.com/film/the-twilight-saga-breaking-dawn-part-2/"> 
+                        <img src="./Letterboxd Clone 1_files/15076-the-twilight-saga-breaking-dawn-part-2-0-1000-0-1500-crop.jpg" alt="">
+                    
+                    </a>
+                        <h3>
+                     The TWILIGHT SAGA: Breaking Dawn pt.2
+                    </h3>
+                    
+                     <a target="_blank" href="https://www.imdb.com/name/nm0174374/?ref_=fn_all_nme_1"><p>
+
+                 Bill Condon
+                     </p></a> 
+                  
+                </div>
+
+
+                <div class="card">
+                    <a target="_blank" href="https://letterboxd.com/film/avengers-endgame/"> 
+                        
+                        <img src="./Letterboxd Clone 1_files/226660-avengers-endgame-0-1000-0-1500-crop.jpg" alt="">
+                    </a>
+                        <h3>
+                        AVENGERS ENDGAME 2019
+                    </h3>
+                    <a target="_blank" href="https://www.imdb.com/name/nm0751577/?ref_=nv_sr_srsg_0_tt_1_nm_7_in_0_q_Anthony%2520russo"><p>
+                        Anthony Russo
+                    </p>
+                </a>
+
+                <a target="_blank" href="https://www.imdb.com/name/nm0751648/?ref_=fn_all_nme_1"><p>
+                    Joe Russo
+                </p>
+            </a>
+                </div>
+                
+                <div class="card">
+                    <a target="_blank" href="https://letterboxd.com/film/the-equalizer/"> 
+                           <img src="./Letterboxd Clone 1_files/116825-the-equalizer-0-1000-0-1500-crop.jpg" alt="">
+                    
+                    </a>
+                           <h3>
+                     The  EQUALIZER 2014 
+                    </h3>
+                    
+                     <a target="_blank" href="https://www.imdb.com/name/nm0298807/?ref_=fn_all_nme_1"><p>
+
+ Antonie Fuqua
+                     </p></a> 
+                  
+                </div>
+
+
+                <div class="card">
+                    <a target="_blank" href="https://www.letterboxd.com/film/titanic-1997/"> 
+                         <img src="./Letterboxd Clone 1_files/51524-titanic-0-1000-0-1500-crop.jpg" alt="">
+                    </a>
+                         <h3>
+                     TITANIC 1997
+                    </h3>
+                    
+                     <a target="_blank" href="https://www.imdb.com/name/nm0000116/?ref_=fn_all_nme_1"><p>
+James Cameron
+                     </p></a> 
+                  
+                </div>
+
+                <div class="card">
+                    <a target="_blank" href="https://www.letterboxd.com/film/the-matrix/"> 
+                          <img src="./Letterboxd Clone 1_files/51518-the-matrix-0-1000-0-1500-crop.jpg" alt="">
+                   
+                    </a>
+                          <h3>
+                    
+                        THE MATRIX 1999
+                    </h3>
+                    
+                     <a target="_blank" href="https://www.imdb.com/name/nm0905154/?ref_=nv_sr_srsg_0_tt_0_nm_6_in_0_q_Lana%2520Wachowski%2520">
+                        
+                        <p>
+
+                            Lana Wachowski 
+                     </p></a> 
+
+                     <a href="https://www.imdb.com/name/nm0905152/?ref_=nv_sr_srsg_0_tt_0_nm_1_in_0_q_Lilly%2520Wachowski%2520">
+                        <p>
+                            Lilly Wachowski
+                        </p>
+                     </a>
+                  
+                </div>
+
+
+
+
+                <div class="card">
+                    <a target="_blank" href="https://letterboxd.com/film/the-matrix-reloaded/"> 
+                          <img src="./Letterboxd Clone 1_files/51517-the-matrix-reloaded-0-1000-0-1500-crop.jpg" alt="">
+                    
+                    </a>
+                          <h3>
+                     MATRIX  
+                    Reloaded 2003
+                    </h3>
+                    
+                     <a target="_blank" href="https://www.imdb.com/name/nm0905154/?ref_=nv_sr_srsg_0_tt_0_nm_6_in_0_q_Lana%2520Wachowski%2520">
+                        
+                        <p>
+
+                            Lana Wachowski 
+                     </p></a> 
+
+                     <a href="https://www.imdb.com/name/nm0905152/?ref_=nv_sr_srsg_0_tt_0_nm_1_in_0_q_Lilly%2520Wachowski%2520">
+                        <p>
+                            Lilly Wachowski
+                        </p>
+                     </a>
+                  
+                </div>
+
+
+                <div class="card">
+                    <a target="_blank" href="https://letterboxd.com/film/the-matrix-revolutions/"> 
+                        
+                        <img src="./Letterboxd Clone 1_files/51516-the-matrix-revolutions-0-1000-0-1500-crop.jpg" alt="">
+                    
+                    </a>
+                        <h3>
+                    
+                        THE MATRIX REVOLUTION 2003
+                    </h3>
+                    
+                     <a target="_blank" href="https://www.imdb.com/name/nm0905154/?ref_=nv_sr_srsg_0_tt_0_nm_6_in_0_q_Lana%2520Wachowski%2520">
+                        
+                        <p>
+
+                            Lana Wachowski 
+                     </p></a> 
+
+                     <a href="https://www.imdb.com/name/nm0905152/?ref_=nv_sr_srsg_0_tt_0_nm_1_in_0_q_Lilly%2520Wachowski%2520">
+                        <p>
+                            Lilly Wachowski
+                        </p>
+                     </a>
+                  
+                </div>
+
+
+                
+
+
+                
+
+                
+
+            </div>
+
+
+
+
+
+
+        </div>
+    </div>
+    <style>
+        .p {
+            text-align: center;
+            font-size: 2em;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin: 12px;
+            background-color: lightseagreen;
+            padding: 12px 21px;
+            color: rgb(2, 8, 17);
+            border-radius: 10px;
+            margin-bottom: 12px;
+            width: 1200px;
+        }
+    </style>
+
+
+
+
+
+    <footer>© 2025 Letterboxd Clone. All rights reserved.
+
+
+
+        <div class="icons">
+            <a href="https://www.facebook.com/letterboxd/"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://x.com/letterboxd?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><i class="fa-brands fa-twitter"></i></a>
+            <a href="https://www.instagram.com/letterboxd/"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.youtube.com/letterboxdhq"><i class="fa-brands fa-youtube"></i></a>
+           <a href="https://www.threads.com/@letterboxd"><i class="fa-brands fa-threads"></i></a>
+        </div>
+    </footer>
+
+
+
+
+
+</body></html>
